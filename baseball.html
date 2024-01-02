@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title> Analyzing Baseball Data </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"> Baseball</a>
+					</header>
+
+				
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Engineering Projects</a></li>
+							<li><a href="CS_projects.html">Computer Science/Data Science Projects</a></li>
+							<li><a href="generic.html"> About Me </a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">  December 13, 2023</span>
+									<h2><a href="baseball.html">Analyzing Baseball Data</a></h2>
+									<p>I used R to determine whether Left Handed Hitters have an advantage with being closer to first base. I looked at on base percentages, batting averages, and number of double plays to debunk the myth that Lefties hit better off of Right Handed Pitchers, but also reveal that being closer to first base does have a significant advantage in disrupting double plays.</p>
+								</header>
+								<h4> View the full project with my code included or continue reading for the shortened version</h4>
+								<ul class="actions special">
+									<li><a href="https://laelayala.github.io/gov50-final-project/" class="button large">View Full Project with Code</a></li>
+								</ul>
+								<h2> At a Glance</h2>
+								<p> To what extent are left-handed batters more effective than right handed batters in MLB? Left-handed batters are believed to have 3 big advantages. 1. Because they are closer to 1st base, it is easier for them to out run ground balls and be safe. 2. A majority of MLB pitchers are right handed, and left-handed batters supposedly hit better off of right-handed pitchers. 3. With a runner on first and the second-basemen shifting closer to 2nd to get a double play, it is easier for a left-handed batter to pull the ball in-between the first and second baseman, and actually make it harder for the fielders to make a double play. </p>
+								<p> The dataset I used are the 2017 season statistics from Baseballr is an R package than can be used to analyze baseball data. Baseballr has scaped data from various sources and created an R package so it can easily be used. This data includes box scores, standings, sabermetrics, etc.  The results from this project is explained below. </p>
+								<div class="row">
+									<div class="column">
+									  <img src="images/obp.jpeg" alt="obp" style="width:100%">
+									</div>
+									<div class="column">
+									  <img src="images/RHP.jpeg" alt="RHP" style="width:100%">
+									</div>
+									<div class="column">
+									  <img src="images/dbplays.jpeg" alt="dbplays" style="width:100%">
+									</div>
+								  </div>
+								<p>Through creating bar plots, we can have a basic understanding of how on-base percentage, batting average, and ground into double play rates compare for left handed and right handed batters. Upon first glance, there does not seem to be a significant difference in the batting averages or on-base percentages of Left and Right handed hitters. However, we cannot determine this from the bar plot alone.In order to statistically confirm that there is no significant difference we need to create bootstrap samples and calculate a p-value which I do in the results section. </p>
+								<p> On the other hand, there does seem to be a larger difference the number of double plays made on LH hitters vs RH hitters. Based on the bar plot, on average, LH hitters ground into less double plays than RH hitters. Once again, we cannot yet determine if there is a significant difference in the average number of double plays without calculating a confidence interval or a p-value, however it is more possible that LH hitters have an advantage over RH hitters in this regard. Similarly, there does seem to be a greater difference in the batting averages of LH hitters and RH hitters when facing a right-handed pitcher. Thus, there may be some merit to the claim that LH hitters hit better off of RH pitchers than RH batters. We need to calculate a p-value to determine if these differences are significant.</p>
+								
+								<h2> Results</h2>
+								<div class="image main"> <img  src="images/null_dist.jpeg" alt="" ></div>
+								<p> Interestingly enough, the only variable that had statistically significant results was the number of times grounded into a double play. I took a bootstrap for this data, as the database only covers data from the 2017 season. To estimate the ATE throughout all seasons we need to bootstrap and examine if there is a significant difference in means.The 99% confidence interval does not contain 0 which means that it is possible for there to be a significant difference in the number of times a batter grounds out to first base given that they are left handed or right handed. This is further supported by our very low p-value of .003 which is less than alpha .01, thus we can reject the null hypothesis . Therefore, there is evidence to support that left handed hitters are less likely to be victim to double plays.</p>
+								<h2> Conclusion</h2>
+								<p> To summarize, the differences in average on base percentages between Left Handed hitters(LH) and right handed hitters is not significantly different, and in fact RH hitters have a slightly higher OBP than LH hitters. This supports my hypothesis that there is no significant difference in the mean OBP most likely because the bases in baseball are 90 ft apart which is far enough to make the advantage of LH hitters having an extra step to the base negligible. Additionally, there were no significant differences in the mean batting averages of LH hitters and RH hitters when hitting against a RH Pitcher. This does not support my hypothesis and actually debunks the belief that LH hitters have an advantage because they hit better off of RH pitchers and most pitchers in the MLB are right handed. While the average batting average for LH hitters off of RH pitchers is a little higher, giving some merit to this belief, ultimately the difference is not statistically significant. Finally, on average, LH hitters grounded out into a double play less than RH hitters. Also, the difference in the average number of times an LH batter vs a RH batter grounds out into a double play is statistically significant with a p- value less than .01. This gives us evidence to reject the null hypothesis that there are no difference in means and supports my hypothesis that being closer to first base makes a difference on not grounding out into a double play.</p>
+
+								</p>
+								
+								<ul class="actions special">
+									<li><a href="https://laelayala.github.io/gov50-final-project/" class="button large">View Full Project with Code</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+				
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1554 Lake Heights Circle <br />
+								Dacula, GA, 30019</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(770) 549-0494</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">laelayala@college.harvard.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="www.linkedin.com/in/lael-ayala-8a9455255" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://github.com/LaelAyala" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

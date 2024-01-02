@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title> Computer Vision </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Computer Vision</a>
+					</header>
+
+				
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Engineering Projects</a></li>
+							<li><a href="CS_projects.html">Computer Science/Data Science Projects</a></li>
+							<li><a href="generic.html"> About Me </a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li><a href="" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date"> December 4, 2023</span>
+									<h2><a href="computerVision.html"> Computer Vision with ur53 robotic arm  </a></h2>
+									<p>I used a basic form of computer vision to detect which objects in the frame are blue and green, determine their locations in the robot frame, pick up the blue block, then place it onto the green platform.</p>
+								</header>
+								<div class="video"> <video  controls autoplay muted width= " 80%" src="videos/blockSped.mp4" alt="" ></div>
+								<p>For this project, it was pretty strightfoward. There was a camera above the robot that took an picture of the table. From there, my MATLAB code surveyed the pixels that were Red only, Blue only, and Green Only, and then calculated the center pixel for each object. It then used the known robot coordinates of the red objects to convert the blue and green objects from pixel coordinate to robot coordinates. Finally, I generated a series of waypoints from the blue platform to the green platform, so the robot could pick up the blue block and place it on the green platform. This code will work, and the robot will pick up the block, no matter where the blue and green objects are on the table   </p>
+								<p>This project was really fun because I've always wanted to work with computer vision, and this experience will be the foundation to future robotics projects!</p>
+								<ul class="links">
+									<li><a href="code/Lael_Lab5New5.m"> Click here to see my MATLAB code </a></li>
+								</ul>
+
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1554 Lake Heights Circle <br />
+								Dacula, GA, 30019</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(770) 549-0494</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">laelayala@college.harvard.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="www.linkedin.com/in/lael-ayala-8a9455255" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://github.com/LaelAyala" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
